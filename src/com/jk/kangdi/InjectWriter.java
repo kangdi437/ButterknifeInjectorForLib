@@ -46,6 +46,7 @@ public class InjectWriter extends WriteCommandAction.Simple {
     public void run() throws Throwable {
          IButterKnife butterKnife = ButterKnifeFactory.findButterKnifeForPsiElement(mProject, mFile);
         butterKnife = new ButterKnife8();
+
         if (butterKnife == null) {
             return; // Butterknife library is not available for project
         }
@@ -85,7 +86,7 @@ public class InjectWriter extends WriteCommandAction.Simple {
 
     private void generateSingleClickMethod() {
         StringBuilder method = new StringBuilder();
-        method.append("@butterknife.OnClick(");
+        method.append("@com.jk.kangdi.OnClick(");
         String fullId = null;
         for (Element element : mElements) {
             if (element.isClick) {
@@ -105,7 +106,7 @@ public class InjectWriter extends WriteCommandAction.Simple {
         for (Element element : mElements) {
             if (element.isClick) {
                 StringBuilder method = new StringBuilder();
-                method.append("@butterknife.OnClick(" + element.getFullID() + ")");
+                method.append("@com.jk.kangdi.OnClick(" + element.getFullID() + ")");
                 method.append("public void on" + Utils.capitalize(element.fieldName) + "Clicked() {}");
                 mClass.add(mFactory.createMethodFromText(method.toString(), mClass));
             }
@@ -114,7 +115,7 @@ public class InjectWriter extends WriteCommandAction.Simple {
 
     private void generateSingleClickMethodForSeveralIds() {
         StringBuilder method = new StringBuilder();
-        method.append("@butterknife.OnClick({");
+        method.append("@com.jk.kangdi.OnClick({");
         int currentCount = 0;
         for (Element element : mElements) {
             if (element.isClick) {
