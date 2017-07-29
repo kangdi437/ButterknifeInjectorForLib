@@ -1,11 +1,11 @@
 <idea-plugin>
-  <id>eu.inmite.android.plugin.butterknifezelezny</id>
+  <id>com.jk.kangdi.libbutterknife</id>
   <name>Android ButterKnife Injector For Lib</name>
   <version>1.7.0-SNAPSHOT</version>
   <vendor email="kangdi1118@126.com" url="https://github.com/kangdi437">Kangdi</vendor>
 
   <description><![CDATA[
-      Plugin for generating ButterKnife injections from selected layout XMLs in activities/fragments/adapters.
+      Plugin for generating LibButterKnife injections from selected layout XMLs in activities/fragments/adapters.
       ]]></description>
 
 
@@ -38,7 +38,7 @@
   </actions>
   <extensions defaultExtensionNs="com.intellij">
     <applicationConfigurable instance="com.jk.kangdi.Settings" />
-    <codeInsight.lineMarkerProvider language="JAVA"
-                                    implementationClass="com.jk.kangdi.navigation.NavigationMarkerProvider" />
+    <!--<codeInsight.lineMarkerProvider language="JAVA"-->
+                                    <!--implementationClass="com.jk.kangdi.navigation.NavigationMarkerProvider" />-->
   </extensions>
 </idea-plugin>
